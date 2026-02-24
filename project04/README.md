@@ -1,5 +1,16 @@
 # Introduction
-Description of the project
+This project implements a De Bruijn graph-based genome assembler to reconstruct the mouse genome. 
+
+* The assembler utilizes an adjacency list representation and a recursive Eulerian walk to reconstruct genomic contigs from k-mer overlaps. 
+The program works under the assumption that there are **no errors** or **variants** present in the sequencing reads.
+
+
+* The pipeline of the project includes:
+  * Breaking each read into k-mers
+  * Then, mapping the overlaps between (k-1)-mer prefixes and suffixes as directed edges in an adjacency list.
+  * Then, to reconstruct the original DNA, the algorithm performs a recursive Eulerian Walk.
+  * This allows it to traverse every edge exactly once while calling stacks for repeat nodes.
+  * Nodes are appended to a path list after all outgoing edges are used up.
 
 # Pseudocode
 Put pseudocode in this box:
