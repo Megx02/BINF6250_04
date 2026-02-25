@@ -58,14 +58,17 @@ Put pseudocode in this box:
 ```
 
 # Successes
-Description of the team's learning points
+- Gained a deep understanding of De Bruijn Graphs
+- Was able to establish a working algorithm
+- Successfully constructed a graph that works with our toy example
+- Comprehensively learned about the Eulerian walk and gained more understanding of recursions.
 
 # Struggles
-Our biggest hurdle as a group was understanding recursion it the context of graph traversal and then figuring out how to implement it. More specifically, the mechanism of backtracking through the graph once you reach the final edge. Even now after we figured out how to implement it, it still doesn't feel the most intuitive, nor the easiest to explain. As we have it implemented now, the approach works for a small subsample of the reads, however, python has a arbitray recursion limit that our assembly implementation exceeds when using too many of the reads. In our current implementation we are not taking into account how many times a node touches an edge. That is, the higher frequencies associated with an edge of a node could correspond to read pile-up or overlaps, which could be used to inform graph traversal. With our current implementation we are not accounting for edge frequencies, and this could be making our graph traversal more ambiguous and complicated, leading to too many recursive calls, and thus a crash when we have too many reads.
+Our biggest hurdle as a group was understanding recursion it the context of graph traversal and then figuring out how to implement it. More specifically, the mechanism of backtracking through the graph once you reach the final edge. Even now after we figured out how to implement it, it still doesn't feel the most intuitive, nor the easiest to explain. As we have it implemented now, the approach works for a small subsample of the reads, however, python has a arbitray recursion limit that our assembly implementation exceeds when using too many of the reads. In our current implementation we are not taking into account how many times a node touches an edge. That is, the higher frequencies associated with an edge of a node could correspond to read pile-up or overlaps, which could be used to inform graph traversal. With our current implementation we are not accounting for edge frequencies, and this could be making our graph traversal more ambiguous and complicated, leading to too many recursive calls, and thus a crash when we have too many reads. By the time we identified the list-based storage as a primary scalability issue, we were deep into the implementation of the traversal logic. Given the project’s timeline, we had to make the difficult trade-off to prioritize algorithmic completion over a full refactoring of our data ingestion layer.
 
 # Personal Reflections
 ## Group Leader
-Group leader's reflection on the project
+Fardina Tabassum- This project was a bit challenging to get started with. I struggled to understand the concept of the Eulerian Walk and how recursions work, but my teammates helped me break down and visualize how the Eulerian walk works, and we were able to successfully implement it. We also had issues running the code in the notebook as we experienced constant shutdowns when trying with real data. My team and I were able to meet multiple downs and truly break down what was happening in each part of the code and that helped get a deeper understanding about what the project was doing. We also had to ensure that our understanding of the DeBruijn graphs was being correctly implemented in our code. Working with such a large dataset was also quite challenging as most of out computers were not able to run the mouse genome file fully.
 
 ## Other member
 Connor - My biggest takeaway from this project is how careful you have to be when the data structures you create from become increasingly larger as you process a large dataset. You also have to be very considerate of what you're doing with the datastructures you create - for our group we ran into trouble with the recursive call of the eulerian walk of our graph. This is most likely a result of not storing the information correct initially. However, through this struggle we've started to think through different ways we can deal with this, and it's made me think about the data structures I'm making more intimately than I have in the past.
@@ -75,4 +78,4 @@ Meghana - While working on this project, the most difficult part for me was unde
 
 
 # Generative AI Appendix
-As per the syllabus
+Claude was used to understand the biological concepts, as well as the Eulerian walk
